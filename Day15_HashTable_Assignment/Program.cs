@@ -11,8 +11,9 @@ namespace Day15_HashTable_Assignment
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Hash Table Assignment");
-            string sentence = "To be or not to be";
-            string[] words = sentence.Split(' ');
+
+            string paragraph = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+            string[] words = paragraph.Split(' ');
 
             FrequencyCounter counter = new FrequencyCounter(words.Length);
 
@@ -22,6 +23,7 @@ namespace Day15_HashTable_Assignment
             }
 
             counter.DisplayFrequency();
+
             Console.ReadLine();
         }
     }

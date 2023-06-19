@@ -19,12 +19,7 @@ namespace Day15_HashTable_Assignment
 
         private int GetIndex(string key)
         {
-            int hash = 5381;
-            foreach (char c in key)
-            {
-                hash = ((hash << 5) + hash) + c;
-            }
-            int index = Math.Abs(hash) % size;
+            int index = Math.Abs(key.GetHashCode()) % size;
             return index;
         }
 
