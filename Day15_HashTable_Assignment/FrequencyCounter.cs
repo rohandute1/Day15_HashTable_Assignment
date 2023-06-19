@@ -58,6 +58,31 @@ namespace Day15_HashTable_Assignment
             }
         }
 
+        public void RemoveWord(string word)
+        {
+            int index = GetIndex(word);
+            LinkedList<MyMapNode<string, int>> linkedList = hashTable[index];
+
+            if (linkedList != null)
+            {
+                MyMapNode<string, int> nodeToRemove = null;
+
+                foreach (var mapNode in linkedList)
+                {
+                    if (mapNode.Key.Equals(word))
+                    {
+                        nodeToRemove = mapNode;
+                        break;
+                    }
+                }
+
+                if (nodeToRemove != null)
+                {
+                    linkedList.Remove(nodeToRemove);
+                }
+            }
+        }
+
         public void DisplayFrequency()
         {
             for (int i = 0; i < size; i++)

@@ -12,8 +12,8 @@ namespace Day15_HashTable_Assignment
         {
             Console.WriteLine("Welcome to Hash Table Assignment");
 
-            string paragraph = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
-            string[] words = paragraph.Split(' ');
+            string phrase = "Paranoids are not paranoid because they are paranoid but because they keep putting themselves deliberately into paranoid avoidable situations";
+            string[] words = phrase.Split(' ');
 
             FrequencyCounter counter = new FrequencyCounter(words.Length);
 
@@ -21,6 +21,8 @@ namespace Day15_HashTable_Assignment
             {
                 counter.AddWord(word.ToLower());
             }
+
+            counter.RemoveWord("avoidable");
 
             counter.DisplayFrequency();
 
